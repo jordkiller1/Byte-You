@@ -3,6 +3,7 @@ extends CharacterBody3D
 class_name player
 var speed = 7
 var friction = 0.85
+var dashCD = 0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED	
@@ -34,8 +35,10 @@ func _input(event: InputEvent) -> void:
 			velocity.y = 7
 #--------
 	if event.is_action_pressed("dash"):
-		velocity.x *= speed
-		velocity.z *= speed
+		if dashCD <= 0:
+			velocity.x *= speed
+			velocity.z *= speed
+			dashCD = 0.75
 
 func _physics_process(delta: float) -> void:
 	var inVec :=  Input.get_vector("left","right","forward","backward")		
@@ -45,7 +48,10 @@ func _physics_process(delta: float) -> void:
 		velTar = dir * speed * 0.60
 	else:
 		velTar = dir * speed
-
+		
+	if dashCD > 0:
+		dashCD -= delta
+	
 	var vel = Vector3(velocity.x,0,velocity.z)
 	if dir:
 		vel = vel.lerp(velTar, speed * delta)
@@ -64,4 +70,4 @@ func _physics_process(delta: float) -> void:
 	$Canvas/Ctrl/pnl/lblX.text = "X: " + str("%.2f" % velocity.x)
 	$Canvas/Ctrl/pnl/lblY.text = "Y: " + str("%.2f" % velocity.y)
 	$Canvas/Ctrl/pnl/lblZ.text = "Z: " + str("%.2f" % velocity.z)
-	$Canvas/Ctrl/pnl/lbltmr.text = "T: " + "0.00"
+	

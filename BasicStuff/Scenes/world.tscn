@@ -12,13 +12,11 @@ background_mode = 1
 background_color = Color(0.6156863, 0.8745098, 1, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.99607843, 0.98039216, 0.94509804, 1)
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.6156863, 0.8745098, 1, 1)
 fog_density = 1.0
 fog_depth_begin = 90.0
 fog_depth_end = 110.0
-adjustment_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fo5ed"]
 dof_blur_far_enabled = true
@@ -52,8 +50,6 @@ albedo_texture = ExtResource("4_fo5ed")
 
 [sub_resource type="BoxMesh" id="BoxMesh_8j60k"]
 size = Vector3(1, 2.8848267, 1)
-
-[sub_resource type="QuadMesh" id="QuadMesh_1jhxy"]
 
 [node name="World" type="Node3D" unique_id=1111246161]
 script = ExtResource("1_go701")
@@ -124,11 +120,6 @@ mesh = SubResource("BoxMesh_8j60k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/randwall4/StaticBody3D" unique_id=1434641868]
 shape = SubResource("ConcavePolygonShape3D_a02cp")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment" unique_id=1135353265]
-transform = Transform3D(5, 0, 0, 0, 20, 0, 0, 0, 5, 0, 10, -12.5)
-material_override = ExtResource("3_fo5ed")
-mesh = SubResource("QuadMesh_1jhxy")
 
 [node name="Player" parent="." unique_id=870698345 instance=ExtResource("1_a02cp")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 1, 0)
