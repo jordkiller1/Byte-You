@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+class_name player
 var speed = 7
 var friction = 0.85
 
