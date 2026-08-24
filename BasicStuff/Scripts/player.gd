@@ -39,6 +39,12 @@ func _input(event: InputEvent) -> void:
 			velocity.x *= speed
 			velocity.z *= speed
 			dashCD = 0.75
+#--------
+	if event.is_action("reset"):
+		position.x = 0
+		position.y = 10
+		position.z = 0
+
 
 func _physics_process(delta: float) -> void:
 	var inVec :=  Input.get_vector("left","right","forward","backward")		
@@ -66,8 +72,3 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y -= 9.81 * delta
 	move_and_slide()
-
-	$Canvas/Ctrl/pnl/lblX.text = "X: " + str("%.2f" % velocity.x)
-	$Canvas/Ctrl/pnl/lblY.text = "Y: " + str("%.2f" % velocity.y)
-	$Canvas/Ctrl/pnl/lblZ.text = "Z: " + str("%.2f" % velocity.z)
-	

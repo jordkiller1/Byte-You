@@ -37,32 +37,3 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 50.0
 offset_bottom = 86.0
-
-[node name="lblX" type="Label" parent="Canvas/Ctrl/pnl" unique_id=1025856234]
-layout_mode = 0
-offset_right = 50.0
-offset_bottom = 23.0
-text = "x: 0.00"
-
-[node name="lblY" type="Label" parent="Canvas/Ctrl/pnl" unique_id=305173882]
-layout_mode = 0
-offset_top = 23.0
-offset_right = 40.0
-offset_bottom = 46.0
-text = "y: 0.00"
-
-[node name="lblZ" type="Label" parent="Canvas/Ctrl/pnl" unique_id=841078928]
-layout_mode = 0
-offset_top = 46.0
-offset_right = 40.0
-offset_bottom = 69.0
-text = "z: 0.00"
-
-[node name="lbltmr" type="Label" parent="Canvas/Ctrl/pnl" unique_id=283794865]
-layout_mode = 0
-offset_top = 65.0
-offset_right = 50.0
-offset_bottom = 88.0
-text = "t: 0.00"
-
-[node name="tmr" type="Timer" parent="." unique_id=48088236]
