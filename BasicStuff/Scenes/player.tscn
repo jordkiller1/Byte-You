@@ -64,5 +64,3 @@ offset_bottom = 88.0
 text = "t: 0.00"
 
 [node name="tmr" type="Timer" parent="." unique_id=48088236]
-
-[node name="Node2D" type="Node2D" parent="." unique_id=1104683114]
