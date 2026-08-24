@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bv3fdpw1eu661"]
+
+[ext_resource type="Script" uid="uid://bi14ahvsti6ge" path="res://Scripts/player2d.gd" id="1_7dgno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktb4s"]
+size = Vector2(105, 119)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pd0ee"]
+load_path = "res://.godot/imported/briar.png-884e9b654ea1cc9236feaafb59a28548.ctex"
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_so8q2"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" unique_id=1976923474]
+script = ExtResource("1_7dgno")
+
+[node name="titbox" type="CollisionShape2D" parent="." unique_id=1392965731]
+position = Vector2(102.5, 109.5)
+shape = SubResource("RectangleShape2D_ktb4s")
+
+[node name="briar" type="Sprite2D" parent="." unique_id=1715827435]
+position = Vector2(50, 50)
+scale = Vector2(0.07, 0.07)
+texture = SubResource("CompressedTexture2D_pd0ee")
+centered = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=618061586]
+replication_config = SubResource("SceneReplicationConfig_so8q2")

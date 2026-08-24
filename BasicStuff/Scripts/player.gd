@@ -1,0 +1,66 @@
+extends CharacterBody3D
+
+var speed = 7
+var friction = 0.85
+var time = 0
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED	
+	if not $tmr.is_stopped():
+		$tmr.stop()
+		
+
+func _input(event: InputEvent) -> void:	
+	if event.is_action_pressed("esc"):
+		get_tree().quit()
+
+	if event is InputEventMouseMotion:
+		rotation_degrees.y -= event.relative.x
+		$Camera.rotation_degrees.x -= event.relative.y
+		if $Camera.rotation_degrees.x > 90:
+			$Camera.rotation_degrees.x = 90
+		if $Camera.rotation_degrees.x < -90:
+			$Camera.rotation_degrees.x = -90
+	if event.is_action_pressed("jump"):
+		if $tmr.is_stopped():
+			$tmr.start()
+			time += 1
+		else:
+			$tmr.stop()
+		if is_on_floor():
+			velocity.y = 4.5
+		if is_on_wall_only():
+			velocity = get_wall_normal() * 14
+			velocity.y = 7
+	if event.is_action_pressed("dash"):
+		velocity.x *= speed
+		velocity.z *= speed
+
+func _physics_process(delta: float) -> void:
+	var inVec :=  Input.get_vector("left","right","forward","backward")		
+	var dir := transform.basis * Vector3(inVec.x,0,inVec.y).normalized()
+	var velTar
+	if not is_on_floor():
+		velTar = dir * speed * 0.60
+	else:
+		velTar = dir * speed
+
+	var vel = Vector3(velocity.x,0,velocity.z)
+	if dir:
+		vel = vel.lerp(velTar, speed * delta)
+	elif is_on_floor():
+		vel = vel.lerp(Vector3.ZERO, friction)
+	velocity.x = vel.x
+	velocity.z = vel.z
+
+	if not is_on_floor():
+		if is_on_wall() and velocity.y < 0:
+			velocity.y -= 9.81 * delta * 0.1
+		else:
+			velocity.y -= 9.81 * delta
+	move_and_slide()
+
+	$Canvas/Ctrl/pnl/lblX.text = "X: " + str("%.2f" % velocity.x)
+	$Canvas/Ctrl/pnl/lblY.text = "Y: " + str("%.2f" % velocity.y)
+	$Canvas/Ctrl/pnl/lblZ.text = "Z: " + str("%.2f" % velocity.z)
+	$Canvas/Ctrl/pnl/lbltmr.text = "T: " + str(time)
