@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the basics"
-run/main_scene="uid://2jeulc8sb2c1"
+run/main_scene="uid://j4xq1qx7qupj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
