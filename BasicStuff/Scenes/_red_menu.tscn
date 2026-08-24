@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://2jeulc8sb2c1"]
 
-[ext_resource type="Script" uid="uid://iouugna828br" path="res://Scenes/control_menu.gd" id="1_xhh6f"]
-[ext_resource type="Script" uid="uid://csm6bkq3gq80q" path="res://Scenes/Spawner.gd" id="2_cayip"]
-[ext_resource type="PackedScene" uid="uid://bv3fdpw1eu661" path="res://Scenes/player2d.tscn" id="3_cayip"]
+[ext_resource type="Script" uid="uid://iouugna828br" path="res://Scripts/_red_control_menu.gd" id="1_xhh6f"]
+[ext_resource type="Script" uid="uid://csm6bkq3gq80q" path="res://Scripts/_red_Spawner.gd" id="2_cayip"]
+[ext_resource type="PackedScene" uid="uid://bv3fdpw1eu661" path="res://Scenes/_red_player2d.tscn" id="3_cayip"]
 
 [node name="menu" type="Node2D" unique_id=573962582]
 

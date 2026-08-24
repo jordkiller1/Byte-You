@@ -20,6 +20,8 @@ shape = SubResource("CapsuleShape3D_1jhxy")
 [node name="Camera" type="Camera3D" parent="." unique_id=284625075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 current = true
+fov = 70.0
+far = 1000.0
 
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1385323200]
 
@@ -62,3 +64,5 @@ offset_bottom = 88.0
 text = "t: 0.00"
 
 [node name="tmr" type="Timer" parent="." unique_id=48088236]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1104683114]
