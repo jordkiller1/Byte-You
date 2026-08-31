@@ -104,3 +104,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -26.263714, 0, -10.180769)
 
 [node name="TrainRoom" parent="." unique_id=555616547 instance=ExtResource("6_o06y3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.467216, 0.24303937, 7)
+
+[node name="Coin" parent="." unique_id=865623081 instance=ExtResource("6_5ukr8")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.5, 0, 50)
