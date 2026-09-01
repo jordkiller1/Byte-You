@@ -94,5 +94,8 @@ omni_attenuation = 1.1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 2)
 shape = SubResource("BoxShape3D_1jhxy")
 
+[node name="tPP" type="Node3D" parent="." unique_id=43284719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9895525, 0.4040196, 2.0025039)
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -69,3 +69,6 @@ skin = SubResource("Skin_h05r6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Roof2/StaticBody3D" unique_id=67876020]
 shape = SubResource("ConcavePolygonShape3D_1e5vj")
+
+[node name="tPP" type="Node3D" parent="." unique_id=1423165116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3859782, 0.7494505, 5.0451403)

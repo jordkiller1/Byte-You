@@ -74,31 +74,15 @@ func _physics_process(delta: float) -> void:
 			velocity.y -= 9.81 * delta
 	move_and_slide()
 
-var telPos : Vector3
-var x
-var y
-var z
 func _on_button_1_pressed() -> void:
-	x = ($"../TrainStation".scale.x * 5) / 2
-	y = 2
-	z = ($"../TrainStation".scale.z * 10) / 2 
-	
-	var rotr =  $"../TrainStation".global_transform.basis.orthonormalized()
-	telPos = rotr * Vector3(x,y,z) + $"../TrainStation".global_position
-	
-	position = telPos
+	position =  $"../TrainStation/tPP".global_position
 
 func _on_button_2_pressed() -> void:
-	
-	x = ($"../Environment/randwall3".scale.x) / 2
-	y = ($"../Environment/randwall3".scale.y * 2.885)
-	z = ($"../Environment/randwall3".scale.z) / 2
-	
-	var rotr =  $"../Environment/randwall3".global_transform.basis.orthonormalized()
-	telPos = rotr * Vector3(x,y,z) + $"../Environment/randwall3".global_position
-	
-	position = telPos
-	
-	#position.x = $"../Environment/randwall3".position.x + ($"../Environment/randwall3".scale.x) / 2
-	#position.y = $"../Environment/randwall3".position.y + ($"../Environment/randwall3".scale.y * 2.9) / 2
-	#position.z = $"../Environment/randwall3".position.z + ($"../Environment/randwall3".scale.z) / 2 
+	position = $"../Environment/randwall3/tPP".global_position
+
+func _on_button_3_pressed() -> void:
+	var pp =  load("res://Scenes/coin.tscn").instantiate()
+	# setup
+	pp.position = position
+	# finish
+	get_parent().add_child(pp)

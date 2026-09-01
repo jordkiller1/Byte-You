@@ -68,3 +68,4 @@ autowrap_trim_flags = 192
 
 [connection signal="pressed" from="Canvas/MarginContainer/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Canvas/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Canvas/MarginContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
