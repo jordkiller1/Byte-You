@@ -45,6 +45,10 @@ func _input(event: InputEvent) -> void:
 		position.x = 0
 		position.y = 10
 		position.z = 0
+		for I in 100:
+			var pp =  load("res://Scenes/ball.tscn").instantiate()
+			pp.position = position
+			get_parent().add_child(pp)
 
 
 func _physics_process(delta: float) -> void:
