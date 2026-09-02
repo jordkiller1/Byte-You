@@ -2,3 +2,8 @@
 
 [resource]
 albedo_color = Color(0.4661808, 0.46618086, 0.46618068, 1)
+metallic = 0.8
+metallic_texture_channel = 4
+roughness = 0.45
+roughness_texture_channel = 4
+subsurf_scatter_strength = 0.3

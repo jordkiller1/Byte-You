@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://db7wbxio8x5rm" path="res://Scripts/train_room.gd" id="1_g37mw"]
 [ext_resource type="Material" uid="uid://d1vyrr3jq6fmk" path="res://Textures/gray.tres" id="2_mq2ep"]
 [ext_resource type="Material" uid="uid://d3bvexgsok6ep" path="res://Textures/Brown.tres" id="3_dgdhn"]
+[ext_resource type="Texture2D" uid="uid://dsmi07icdptal" path="res://Textures/Wood-Dark.png" id="3_m2ssb"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1jhxy"]
 
@@ -27,6 +28,9 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_1jhxy"]
 size = Vector3(16, 4, 4)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nmt6"]
+albedo_texture = ExtResource("3_m2ssb")
+
 [sub_resource type="BoxMesh" id="BoxMesh_g37mw"]
 size = Vector3(0.2, 2, 1)
 
@@ -35,6 +39,9 @@ data = PackedVector3Array(-0.099999994, 1, 0.5, 0.099999994, 1, 0.5, -0.09999999
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j2iq5"]
 size = Vector3(0.8, 2, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2iq5"]
+albedo_texture = ExtResource("3_m2ssb")
 
 [node name="TrainRoom" type="Node3D" unique_id=555616547]
 script = ExtResource("1_g37mw")
@@ -117,7 +124,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9895525, 0.4040196, 2.00250
 
 [node name="doorChoice1" type="MeshInstance3D" parent="." unique_id=1295401603]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.5, 1, 0.1)
-material_override = ExtResource("3_dgdhn")
+material_override = SubResource("StandardMaterial3D_2nmt6")
+material_overlay = ExtResource("3_dgdhn")
 mesh = SubResource("BoxMesh_g37mw")
 
 [node name="doorLight" type="OmniLight3D" parent="doorChoice1" unique_id=1025698939]
@@ -126,9 +134,9 @@ light_energy = 1.9
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 4.0
-distance_fade_shadow = 8.0
-distance_fade_length = 12.0
-omni_range = 8.0
+distance_fade_shadow = 6.0
+distance_fade_length = 11.0
+omni_range = 6.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doorChoice1" unique_id=905176282]
 
@@ -136,7 +144,6 @@ omni_range = 8.0
 shape = SubResource("ConcavePolygonShape3D_2nmt6")
 
 [node name="Area3D1" type="Area3D" parent="doorChoice1" unique_id=200026915]
-script = ExtResource("1_g37mw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="doorChoice1/Area3D1" unique_id=1312444576]
 shape = SubResource("BoxShape3D_j2iq5")
@@ -144,6 +151,7 @@ shape = SubResource("BoxShape3D_j2iq5")
 [node name="doorChoice2" type="MeshInstance3D" parent="." unique_id=273903735]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.5, 1, 0.1)
 material_override = ExtResource("3_dgdhn")
+material_overlay = SubResource("StandardMaterial3D_j2iq5")
 mesh = SubResource("BoxMesh_g37mw")
 
 [node name="doorLight" type="OmniLight3D" parent="doorChoice2" unique_id=294211550]
@@ -152,9 +160,9 @@ light_energy = 1.9
 shadow_enabled = true
 distance_fade_enabled = true
 distance_fade_begin = 4.0
-distance_fade_shadow = 8.0
-distance_fade_length = 12.0
-omni_range = 8.0
+distance_fade_shadow = 6.0
+distance_fade_length = 11.0
+omni_range = 6.0
 omni_attenuation = 0.5
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doorChoice2" unique_id=319294792]
