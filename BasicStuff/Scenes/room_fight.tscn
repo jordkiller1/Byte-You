@@ -3,6 +3,7 @@
 [ext_resource type="Material" uid="uid://d1vyrr3jq6fmk" path="res://Textures/gray.tres" id="1_grehs"]
 [ext_resource type="Material" uid="uid://d3bvexgsok6ep" path="res://Textures/Brown.tres" id="2_8unir"]
 [ext_resource type="Texture2D" uid="uid://dsmi07icdptal" path="res://Textures/Wood-Dark.png" id="2_grehs"]
+[ext_resource type="PackedScene" uid="uid://credwlramjqa4" path="res://Scenes/enemy.tscn" id="4_8unir"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1jhxy"]
 size = Vector3(40, 1, 20)
@@ -190,3 +191,8 @@ light_energy = 2.5
 shadow_enabled = true
 omni_range = 40.0
 omni_attenuation = 1.5
+
+[node name="Enemies" type="Node3D" parent="." unique_id=1919915208]
+
+[node name="enemy" parent="Enemies" unique_id=145398024 instance=ExtResource("4_8unir")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58706427, 0)
