@@ -9,7 +9,7 @@ func _process(delta: float) -> void:
 	if touching:
 		$"..".position.y += 10 * delta
 	elif $"..".position.y > 0:
-		$"..".position.y -= 10 * delta
+		$"..".position.y -= 20 * delta
 func _on_body_entered(body: Node3D) -> void:
 	if body is player:
 		touching = true
