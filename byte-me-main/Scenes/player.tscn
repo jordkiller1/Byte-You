@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bhvh7ywim0wri"]
+
+[ext_resource type="Script" uid="uid://biavlphnupgyp" path="res://Scripts/player.gd" id="1_v0iea"]
+[ext_resource type="Material" uid="uid://d1vyrr3jq6fmk" path="res://Textures/gray.tres" id="2_cvnsp"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_a02cp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1jhxy"]
+
+[node name="Player" type="CharacterBody3D" unique_id=145398024]
+script = ExtResource("1_v0iea")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1320405301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = ExtResource("2_cvnsp")
+mesh = SubResource("CapsuleMesh_a02cp")
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=91760169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_1jhxy")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=284625075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+current = true
+fov = 70.0
+far = 1000.0
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1385323200]
+
+[node name="MarginContainer" type="MarginContainer" parent="Canvas" unique_id=690791848]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 70
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Canvas/MarginContainer" unique_id=1619673865]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="Button1" type="Button" parent="Canvas/MarginContainer/HBoxContainer" unique_id=631369889]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "The train station "
+autowrap_mode = 2
+autowrap_trim_flags = 192
+
+[node name="Button2" type="Button" parent="Canvas/MarginContainer/HBoxContainer" unique_id=1156850791]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "The wooden log"
+autowrap_mode = 2
+autowrap_trim_flags = 192
+
+[node name="Button3" type="Button" parent="Canvas/MarginContainer/HBoxContainer" unique_id=1943323907]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "button3"
+autowrap_mode = 2
+autowrap_trim_flags = 192
+
+[connection signal="pressed" from="Canvas/MarginContainer/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Canvas/MarginContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Canvas/MarginContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
