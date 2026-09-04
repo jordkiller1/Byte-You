@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://8gxsdxl3tbi8"]
 
-[ext_resource type="Script" uid="uid://i4pyyn2jxe0l" path="res://Scenes/room_fight.gd" id="1_8unir"]
+[ext_resource type="Script" uid="uid://i4pyyn2jxe0l" path="res://Scripts/room_fight.gd" id="1_8unir"]
 [ext_resource type="Material" uid="uid://d1vyrr3jq6fmk" path="res://Textures/gray.tres" id="1_grehs"]
 [ext_resource type="Material" uid="uid://d3bvexgsok6ep" path="res://Textures/Brown.tres" id="2_8unir"]
 [ext_resource type="Texture2D" uid="uid://dsmi07icdptal" path="res://Textures/Wood-Dark.png" id="2_grehs"]
+[ext_resource type="PackedScene" uid="uid://credwlramjqa4" path="res://Scenes/enemy.tscn" id="5_s0n17"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_1jhxy"]
 size = Vector3(40, 1, 20)
@@ -192,5 +193,9 @@ light_energy = 2.5
 shadow_enabled = true
 omni_range = 40.0
 omni_attenuation = 1.5
+
+[node name="Enemies" type="Node3D" parent="." unique_id=839868655]
+
+[node name="enemy" parent="Enemies" unique_id=145398024 instance=ExtResource("5_s0n17")]
 
 [connection signal="body_entered" from="Room/doorFinish/Area3D" to="." method="on_door_exit2"]

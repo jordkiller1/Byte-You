@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dasjifi11ua6b"]
 
-[ext_resource type="Script" uid="uid://dv48uevcwu7bb" path="res://Scenes/room_puzzle.gd" id="1_75tpe"]
+[ext_resource type="Script" uid="uid://dv48uevcwu7bb" path="res://Scripts/room_puzzle.gd" id="1_75tpe"]
 [ext_resource type="Material" uid="uid://d1vyrr3jq6fmk" path="res://Textures/gray.tres" id="1_gwqga"]
 [ext_resource type="Material" uid="uid://d3bvexgsok6ep" path="res://Textures/Brown.tres" id="2_75tpe"]
 
