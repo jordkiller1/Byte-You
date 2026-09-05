@@ -197,5 +197,6 @@ omni_attenuation = 1.5
 [node name="Enemies" type="Node3D" parent="." unique_id=839868655]
 
 [node name="enemy" parent="Enemies" unique_id=145398024 instance=ExtResource("5_s0n17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86504436, 0)
 
 [connection signal="body_entered" from="Room/doorFinish/Area3D" to="." method="on_door_exit2"]

@@ -5,7 +5,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= 9.81 * delta
 	var targetPos = $"../../../Player".position
 	var x = targetPos.x - global_position.x
-	var z = targetPos.z - global_position.z
-	velocity.x = x
-	velocity.z = z
+	var z = targetPos.z - global_position.z	
+	velocity.x = x * 1.4
+	velocity.z = z * 1.4
 	move_and_slide()

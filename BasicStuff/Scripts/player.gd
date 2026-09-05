@@ -4,6 +4,8 @@ class_name player
 var speed = 7
 var friction = 0.85
 var dashCD = 0
+var pJump = 0
+var multipliers = 1
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED	
@@ -29,11 +31,16 @@ func _input(event: InputEvent) -> void:
 			$Camera.rotation_degrees.x = -90
 #--------
 	if event.is_action_pressed("jump"):
-		if is_on_floor():
+		if pJump > 0 and pJump < 0.5:
 			velocity.y = 4.5
+			multipliers += 0.5
+		elif is_on_floor():
+			velocity.y = 4.5
+			
 		if is_on_wall_only():
 			velocity = get_wall_normal() * 14
 			velocity.y = 7
+		pJump = 1
 #--------
 	if event.is_action_pressed("dash"):
 		if dashCD <= 0:
@@ -62,8 +69,15 @@ func _physics_process(delta: float) -> void:
 		
 	if dashCD > 0:
 		dashCD -= delta
+	var isJump
+	if pJump > 0:
+		pJump -= delta
+		isJump = true
+	if (pJump <= 0.0) and isJump:
+		multipliers = 1
 	
 	var vel = Vector3(velocity.x,0,velocity.z)
+	velTar *= multipliers
 	if dir:
 		vel = vel.lerp(velTar, speed * delta)
 	elif is_on_floor():
@@ -77,6 +91,12 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y -= 9.81 * delta
 	move_and_slide()
+	$Canvas/dbgLabel.text = str("%.2f" % pJump)
+	if isJump:
+		$Canvas/dbgLabel2.text = "true"
+	else:
+		$Canvas/dbgLabel2.text = "false"
+	$Canvas/dbgLabel3.text = str(multipliers)
 
 func _on_button_1_pressed() -> void:
 	position =  $"../TrainStation/tPP".global_position
