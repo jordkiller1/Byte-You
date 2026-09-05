@@ -31,7 +31,7 @@ func _input(event: InputEvent) -> void:
 			$Camera.rotation_degrees.x = -90
 #--------
 	if event.is_action_pressed("jump"):
-		if pJump > 0 and pJump < 0.5:
+		if pJump > 0 and pJump < 0.3:
 			velocity.y = 4.5
 			multipliers += 0.5
 		elif is_on_floor():
