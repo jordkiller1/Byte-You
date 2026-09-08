@@ -31,7 +31,7 @@ func _input(event: InputEvent) -> void:
 			$Camera.rotation_degrees.x = -90
 #--------
 	if event.is_action_pressed("jump"):
-		if pJump > 0 and pJump < 0.3:
+		if pJump > 0 and pJump < 0.28:
 			velocity.y = 4.5
 			multipliers += 0.4
 		elif is_on_floor():
@@ -52,10 +52,8 @@ func _input(event: InputEvent) -> void:
 		position.x = 0
 		position.y = 10
 		position.z = 0
-		for I in 100:
-			var pp =  load("res://Scenes/ball.tscn").instantiate()
-			pp.position = position
-			get_parent().add_child(pp)
+		velocity = Vector3(0,0,0)
+
 
 
 func _physics_process(delta: float) -> void:
@@ -92,21 +90,13 @@ func _physics_process(delta: float) -> void:
 			velocity.y -= 9.81 * delta
 	move_and_slide()
 	$Canvas/dbgLabel.text = str("%.2f" % pJump)
-	if isJump:
-		$Canvas/dbgLabel2.text = "true"
-	else:
-		$Canvas/dbgLabel2.text = "false"
-	$Canvas/dbgLabel3.text = str(multipliers)
+	$Canvas/dbgLabel3.text = "speed multiplier: " + str(multipliers)
 
 func _on_button_1_pressed() -> void:
-	position =  $"../TrainStation/tPP".global_position
+	pass
 
 func _on_button_2_pressed() -> void:
-	position = $"../Environment/randwall3/tPP".global_position
+	pass
 
 func _on_button_3_pressed() -> void:
-	var pp =  load("res://Scenes/coin.tscn").instantiate()
-	# setup
-	pp.position = position
-	# finish
-	get_parent().add_child(pp)
+	pass

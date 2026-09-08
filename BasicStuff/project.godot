@@ -14,6 +14,10 @@ config/name="the basics"
 run/main_scene="uid://j4xq1qx7qupj"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+worldScript="*uid://bdeq3wey65y2t"
+
 [display]
 
 window/stretch/mode="canvas_items"
