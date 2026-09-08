@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 class_name player
+
 var health = 100
 
 var speed = 7
@@ -73,7 +74,7 @@ func endClick() -> void:
 
 func restartClick() -> void:
 	position.x = 0
-	position.y = 10
+	position.y = 0
 	position.z = 0
 	health = 100
 	worldScript.roomsDone = 0
