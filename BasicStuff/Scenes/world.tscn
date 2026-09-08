@@ -4,28 +4,25 @@
 [ext_resource type="Script" uid="uid://bdeq3wey65y2t" path="res://Scripts/world.gd" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://8gxsdxl3tbi8" path="res://Scenes/room_fight.tscn" id="2_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://dasjifi11ua6b" path="res://Scenes/room_puzzle.tscn" id="2_k7acu"]
-[ext_resource type="PackedScene" uid="uid://60xylnpy6xoc" path="res://Scenes/train_station.tscn" id="2_o06y3"]
 [ext_resource type="PackedScene" uid="uid://bnvgkb086jhld" path="res://Scenes/train_room.tscn" id="6_o06y3"]
 
 [sub_resource type="Environment" id="Environment_5ukr8"]
 ambient_light_energy = 5.0
 ssao_enabled = true
 ssil_enabled = true
+glow_enabled = true
 
 [node name="World" type="Node3D" unique_id=1111246161]
 script = ExtResource("1_go701")
 
 [node name="roomPuzzle" parent="." unique_id=1504772067 instance=ExtResource("2_k7acu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.980034, 0, -25.369835)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 30, 2, -50)
 
 [node name="TrainRoom" parent="." unique_id=555616547 instance=ExtResource("6_o06y3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9970903, 0.24303937, -2.274568)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -2.5)
 
 [node name="roomFight" parent="." unique_id=1433791034 instance=ExtResource("2_5ukr8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.888668, 1.8, -22.382233)
-
-[node name="TrainStation" parent="." unique_id=1947766516 instance=ExtResource("2_o06y3")]
-transform = Transform3D(-6.556708e-08, 0, 3, 0, 1.5, 0, -1.5, 0, -1.3113416e-07, 8, 0, 27.273594)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -30, 2, -50)
 
 [node name="Player" parent="." unique_id=870698345 instance=ExtResource("1_a02cp")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 1, 0)

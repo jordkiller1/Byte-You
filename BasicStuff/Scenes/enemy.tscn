@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1jhxy"]
 
 [node name="enemy" type="CharacterBody3D" unique_id=145398024]
+transform = Transform3D(1, 0, 1.172251e-07, 0, 1, 0, -1.172251e-07, 0, 1, 0, 0, 0)
 script = ExtResource("1_1f0kj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1320405301]
@@ -18,3 +19,13 @@ mesh = SubResource("CapsuleMesh_a02cp")
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=91760169]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1jhxy")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=115290822]
+transform = Transform3D(0.79952747, 0, 0, 0, -1.0490733e-08, 0.6, 0, -0.24, -2.6226834e-08, 8.593278e-08, 1.4803835, -0.3910057)
+material_override = ExtResource("2_afpow")
+mesh = SubResource("CapsuleMesh_a02cp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=363404727]
+transform = Transform3D(-4.3711374e-08, 3.8624755e-08, -0.6, 0.99999994, -2.8134023e-08, -2.6226836e-08, -1.17225106e-07, -0.23999998, -9.656189e-08, -1.48016746e-08, 0.9780134, 0.4683193)
+material_override = ExtResource("2_afpow")
+mesh = SubResource("CapsuleMesh_a02cp")

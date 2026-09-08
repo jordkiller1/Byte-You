@@ -8,4 +8,8 @@ func _physics_process(delta: float) -> void:
 	var z = targetPos.z - global_position.z	
 	velocity.x = x * 1.4
 	velocity.z = z * 1.4
+	targetPos = Vector3(targetPos.x,targetPos.y,targetPos.z)
+	look_at(targetPos)
+	rotation.z = 0
+	rotation.x = 0
 	move_and_slide()
