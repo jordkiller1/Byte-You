@@ -6,7 +6,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func on_door_touch_exit1(body: Node3D) -> void:
+func on_door_exit2(body: Node3D) -> void:
 	if body is player:
 		$"../Player".position = $"../TrainRoom/tPP".global_position
 		worldScript.roomsDone += 1

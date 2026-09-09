@@ -5,6 +5,10 @@ class_name enemy
 var attacking = false
 var attackCD = 0.00
 
+func _ready() -> void:
+	pass
+
+
 func _process(delta: float) -> void:
 	if attacking:
 		if attackCD <= 0.00:
