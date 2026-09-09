@@ -4,7 +4,10 @@
 [ext_resource type="Script" uid="uid://bdeq3wey65y2t" path="res://Scripts/world.gd" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://8gxsdxl3tbi8" path="res://Scenes/room_fight.tscn" id="2_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://dasjifi11ua6b" path="res://Scenes/room_puzzle.tscn" id="2_k7acu"]
+[ext_resource type="PackedScene" uid="uid://bprkp7lmokk3h" path="res://Scenes/room_merch.tscn" id="6_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://bnvgkb086jhld" path="res://Scenes/train_room.tscn" id="6_o06y3"]
+[ext_resource type="PackedScene" uid="uid://bqcdu6sky7aam" path="res://Scenes/room_parkour.tscn" id="7_k7acu"]
+[ext_resource type="PackedScene" uid="uid://cjxnqu6mno064" path="res://Scenes/room_boss.tscn" id="8_5v1tr"]
 
 [sub_resource type="Environment" id="Environment_5ukr8"]
 ambient_light_energy = 5.0
@@ -29,3 +32,12 @@ transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=37776276]
 environment = SubResource("Environment_5ukr8")
+
+[node name="roomMerch" parent="." unique_id=1399321937 instance=ExtResource("6_5ukr8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -30, 0, 0)
+
+[node name="roomParkour" parent="." unique_id=1653057380 instance=ExtResource("7_k7acu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -29, 11, 0)
+
+[node name="roomBoss" parent="." unique_id=1432943672 instance=ExtResource("8_5v1tr")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 42, 0, 0)
