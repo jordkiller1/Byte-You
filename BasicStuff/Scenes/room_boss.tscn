@@ -47,6 +47,7 @@ script = ExtResource("1_vxu83")
 [node name="Room" type="Node3D" parent="." unique_id=354658086]
 
 [node name="Floor" type="MeshInstance3D" parent="Room" unique_id=564134181]
+transform = Transform3D(1.7535145, 0, 0, 0, 1, 0, 0, 0, 3.2020502, 0, 0, 0)
 material_override = ExtResource("2_pbew5")
 mesh = SubResource("BoxMesh_1jhxy")
 
@@ -56,7 +57,7 @@ mesh = SubResource("BoxMesh_1jhxy")
 shape = SubResource("ConcavePolygonShape3D_dna06")
 
 [node name="Wall" type="MeshInstance3D" parent="Room" unique_id=587401751]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -10)
+transform = Transform3D(1, 0, 0, 0, 4.28102, 0, 0, 0, 1, 0, 3, -31.779795)
 material_override = ExtResource("2_pbew5")
 mesh = SubResource("BoxMesh_h05r6")
 
@@ -66,7 +67,7 @@ mesh = SubResource("BoxMesh_h05r6")
 shape = SubResource("ConcavePolygonShape3D_grehs")
 
 [node name="Wall2" type="MeshInstance3D" parent="Room" unique_id=1773702998]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 10)
+transform = Transform3D(1, 0, 0, 0, 4.3130994, 0, 0, 0, 1, 0, 3, 31.790466)
 material_override = ExtResource("2_pbew5")
 mesh = SubResource("BoxMesh_h05r6")
 
@@ -76,7 +77,7 @@ mesh = SubResource("BoxMesh_h05r6")
 shape = SubResource("ConcavePolygonShape3D_8unir")
 
 [node name="Wall3" type="MeshInstance3D" parent="Room" unique_id=702008495]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20, 3, 0)
+transform = Transform3D(-7.050254e-08, 0, -1, 0, 2.7546997, 0, 1.61291, 0, -4.371139e-08, 20, 7, 0)
 material_override = ExtResource("2_pbew5")
 mesh = SubResource("BoxMesh_h05r6")
 
@@ -86,7 +87,7 @@ mesh = SubResource("BoxMesh_h05r6")
 shape = SubResource("ConcavePolygonShape3D_s0n17")
 
 [node name="Wall4" type="MeshInstance3D" parent="Room" unique_id=1758881491]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -20, 3, 0)
+transform = Transform3D(-7.013145e-08, 0, -1.3020515, 0, 2.75, 0, 1.6044205, 0, -5.6914487e-08, -20.032402, 7, 0)
 material_override = ExtResource("2_pbew5")
 mesh = SubResource("BoxMesh_h05r6")
 
@@ -96,7 +97,7 @@ mesh = SubResource("BoxMesh_h05r6")
 shape = SubResource("ConcavePolygonShape3D_6xr8y")
 
 [node name="Ceiling" type="MeshInstance3D" parent="Room" unique_id=264606281]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.1684892, 0, 14.327132, 0)
 material_override = ExtResource("2_pbew5")
 mesh = SubResource("BoxMesh_1jhxy")
 
@@ -133,8 +134,110 @@ shape = SubResource("ConcavePolygonShape3D_s2s7g")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/doorFinish/Area3D" unique_id=227763758]
 shape = SubResource("BoxShape3D_1jhxy")
 
+[node name="Floor2" type="MeshInstance3D" parent="Room" unique_id=624456486]
+transform = Transform3D(0.28718284, 0, 0, 0, 1, 0, 0, 0, 0.56970507, 0, 0.9987049, 0)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Floor2" unique_id=1387033300]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floor2/StaticBody3D" unique_id=1547744528]
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Room" unique_id=1681247723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.045374393, 8.695859, -0.047874093)
+light_energy = 2.5
+shadow_enabled = true
+omni_range = 40.0
+omni_attenuation = 1.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Room" unique_id=172793580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25746346, 5.867677, 16.377747)
+light_energy = 2.5
+shadow_enabled = true
+omni_range = 40.0
+omni_attenuation = 1.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Room" unique_id=1477819794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25746346, 5.867677, -13.851999)
+light_energy = 2.5
+shadow_enabled = true
+omni_range = 40.0
+omni_attenuation = 1.5
+
+[node name="Block1" type="MeshInstance3D" parent="Room" unique_id=1480444281]
+transform = Transform3D(0.28718284, 0, 0, 0, 5.6683555, 0, 0, 0, 0.56970507, -13.645534, 3.3626413, -25.534496)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Block1" unique_id=202567207]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Block1/StaticBody3D" unique_id=1319969929]
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
+[node name="Block2" type="MeshInstance3D" parent="Room" unique_id=1326988058]
+transform = Transform3D(0.28718284, 0, 0, 0, 4.389136, 0, 0, 0, 0.56970507, 13.7718935, 2.70581, -25.582869)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Block2" unique_id=11576233]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Block2/StaticBody3D" unique_id=653897780]
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
+[node name="Block3" type="MeshInstance3D" parent="Room" unique_id=86704327]
+transform = Transform3D(0.22326079, 0, 0, 0, 3.5955043, 0, 0, 0, 0.3333778, 15.048257, 2.2243905, 28.019426)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Block3" unique_id=1778651959]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Block3/StaticBody3D" unique_id=855745886]
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
+[node name="Block4" type="MeshInstance3D" parent="Room" unique_id=728310891]
+transform = Transform3D(0.22326079, 0, 0, 0, 4.582009, 0, 0, 0, 0.39784557, -15.041972, 2.763064, 27.42523)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Block4" unique_id=675892504]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Block4/StaticBody3D" unique_id=1121251796]
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
+[node name="Block5" type="MeshInstance3D" parent="Room" unique_id=1983268443]
+transform = Transform3D(0.00623488, 0, 0, 0, 1.4224949, 0, 0, 0, 0.010895278, 0.2879176, 13.132343, -0.33153915)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Block5" unique_id=1189321413]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Block5/StaticBody3D" unique_id=1677315083]
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
+[node name="Block6" type="MeshInstance3D" parent="Room" unique_id=639606152]
+transform = Transform3D(0.00623488, 0, 0, 0, 0.8285996, 0, 0, 0, 0.010895278, 0.22941715, 13.444376, -0.5159555)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Block6" unique_id=1383401149]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Block6/StaticBody3D" unique_id=432666450]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.2413292, 0, -0.3438797)
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
+[node name="Block7" type="MeshInstance3D" parent="Room" unique_id=737788451]
+transform = Transform3D(0.00623488, 0, 0, 0, 0.64598936, 0, 0, 0, 0.010895278, 0.3809821, 13.5185995, -0.2078819)
+material_override = ExtResource("2_pbew5")
+mesh = SubResource("BoxMesh_1jhxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Block7" unique_id=299250961]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Block7/StaticBody3D" unique_id=566908461]
+shape = SubResource("ConcavePolygonShape3D_dna06")
+
 [node name="OmniLight3D1" type="OmniLight3D" parent="." unique_id=1435733163]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6330404, 3.1188772, -1.0763794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.323215, 2.6592414, 0.08336067)
 light_energy = 2.5
 shadow_enabled = true
 distance_fade_begin = 1.0
@@ -144,7 +247,7 @@ omni_range = 40.0
 omni_attenuation = 1.5
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1180673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.53388, 3.1188772, 7.5624638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.793262, 1.8061814, -0.047874093)
 light_energy = 2.5
 shadow_enabled = true
 omni_range = 40.0
