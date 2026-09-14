@@ -7,10 +7,12 @@ func _ready() -> void:
 func onDoorTouch1(body: Node3D) -> void:
 	if body is player:
 		$"../Player".position = doorTP1
+		roomRandom()
 
 func onDoorTouch2(body: Node3D) -> void:
 	if body is player:
 		$"../Player".position = doorTP2
+		roomRandom()
 
 func roomRandom() -> void:
 	for I in range(3):
